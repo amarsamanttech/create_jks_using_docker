@@ -20,5 +20,5 @@ This repository provides a streamlined way to generate **Java KeyStore (JKS)** f
 ### Setup
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/amarsamanttech/create_jks_using_docker.git
    cd your-repo
