@@ -3,7 +3,7 @@
 ![Logo - Effortlessly Generate JKS Files Using Docker](logo.png)
 
 ## Overview
-This repository provides a streamlined way to generate **Java KeyStore (JKS)** files for securing **Java applications** using **Docker**, as detailed in the [4-Minute Guide](https://medium.com/@yourusername/effortlessly-generate-jks-files-using-docker-a-4-minute-guide) (replace with your published URL). The logo, set against a gritty post-apocalyptic wasteland, symbolizes the resilience of automated security solutions with Docker (anchor) and JKS keys. Ideal for learning **SSL** and **Java security**, this setup is perfect for APIs, microservices, or local development.
+This repository provides a streamlined way to generate **Java KeyStore (JKS)** files for securing **Java applications** using **Docker**, as detailed in the (https://medium.com/@amar.samant/effortlessly-generate-jks-files-using-docker-9fe5193ae739). The logo, set against a gritty post-apocalyptic wasteland, symbolizes the resilience of automated security solutions with Docker (anchor) and JKS keys. Ideal for learning **SSL** and **Java security**, this setup is perfect for APIs, microservices, or local development.
 
 ## Features
 - Automates JKS file generation with a `cert-gen` Docker container.
