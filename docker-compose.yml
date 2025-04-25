@@ -1,0 +1,25 @@
+services:
+  cert-gen:
+    build:
+      context: ./certs
+      dockerfile: Dockerfile
+    volumes:
+      - ./certs/output:/certs/output
+    command: ["/generate-certs.sh"]
+    networks:
+      - app-network
+  app:
+    image: openjdk:17-jdk-slim
+    environment:
+      SSL_TRUSTSTORE_LOCATION: /etc/app/secrets/server.truststore.jks
+      SSL_TRUSTSTORE_PASSWORD: changeit
+      SSL_KEYSTORE_LOCATION: /etc/app/secrets/server.keystore.jks
+      SSL_KEYSTORE_PASSWORD: changeit
+    volumes:
+      - ./certs/output/server.truststore.jks:/etc/app/secrets/server.truststore.jks
+      - ./certs/output/server.keystore.jks:/etc/app/secrets/server.keystore.jks
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge

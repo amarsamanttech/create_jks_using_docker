@@ -1,0 +1,7 @@
+#!/bin/bash
+openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=server.example.com"
+keytool -import -trustcacerts -alias server -file server.crt -keystore server.truststore.jks -storepass changeit -noprompt
+openssl pkcs12 -export -in server.crt -inkey server.key -out server.p12 -name server -passout pass:changeit
+keytool -importkeystore -srckeystore server.p12 -srcstoretype PKCS12 -destkeystore server.keystore.jks -deststorepass changeit -srcstorepass changeit
+mv server.* /certs/output/
+echo "Certificates generated: server.crt, server.key, server.keystore.jks, server.truststore.jks"
